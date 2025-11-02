@@ -20,28 +20,35 @@ public class Latihan4 {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                 // 1. Atur Layout Manager ke BorderLayout
-                // Sebenarnya ini tidak perlu
-                // Karena BorderLayout adalah Manager default
                 frame.setLayout(new BorderLayout());
 
                 // 2. Buat komponen
                 JLabel label = new JLabel("Label ada di Atas (NORTH)");
-                JButton button = new JButton("Tombol ada di bawah (SOUTH)");
+                JButton buttonSouth = new JButton("Tombol ada di bawah (SOUTH)");
+                JButton buttonWest = new JButton("WEST");
+                JButton buttonEast = new JButton("EAST");
+                JButton buttonCenter = new JButton("CENTER");
 
                 // 3. Tambahkan Aksi (ActionListener) ke tombol
-                button.addActionListener(e ->{
-                    label.setText("Tombol di SOUTH diklik!");
+                buttonSouth.addActionListener(e ->{
+                    label.setText("Tombol SOUTH diklik!");
+                });
+                buttonWest.addActionListener(e ->{
+                    label.setText("Tombol WEST diklik!");
+                });
+                buttonEast.addActionListener(e ->{
+                    label.setText("Tombol EAST diklik!");
+                });
+                buttonCenter.addActionListener(e ->{
+                    label.setText("Tombol CENTER diklik!");
                 });
 
                 // 4. Tambahkan komponen ke frame DENGAN POSISI
                 frame.add(label, BorderLayout.NORTH);
-                frame.add(button, BorderLayout.SOUTH);
-
-                // Kita tambahkan koomponen lain
-                frame.add(new JButton("WEST"), BorderLayout.WEST);
-                frame.add(new JButton("EAST"), BorderLayout.EAST);
-                frame.add(new JButton("CENTER"), BorderLayout.CENTER);
-
+                frame.add(buttonSouth, BorderLayout.SOUTH);
+                frame.add(buttonWest, BorderLayout.WEST);
+                frame.add(buttonEast, BorderLayout.EAST);
+                frame.add(buttonCenter, BorderLayout.CENTER);
                 frame.setVisible(true);
             }
         });
